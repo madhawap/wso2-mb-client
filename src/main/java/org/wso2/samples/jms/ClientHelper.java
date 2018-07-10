@@ -20,7 +20,6 @@ public class ClientHelper {
     /**
      * XA connection factory name used.
      */
-    public static final String XA_CONNECTION_FACTORY = "XaConnectionFactory";
 
     public static InitialContextBuilder getInitialContextBuilder(String username,
                                                                  String password,
@@ -32,7 +31,6 @@ public class ClientHelper {
     public static class InitialContextBuilder {
 
         public static final String CONNECTION_FACTORY_PREFIX = "connectionfactory.";
-        public static final String XA_CONNECTION_FACTORY_PREFIX = "xaconnectionfactory.";
         private final Properties contextProperties;
         private final String username;
         private final String password;
@@ -50,19 +48,8 @@ public class ClientHelper {
             contextProperties.put(CONNECTION_FACTORY_PREFIX + CONNECTION_FACTORY, connectionString);
         }
 
-        public InitialContextBuilder withXaConnectionFactory() {
-            String connectionString = getBrokerConnectionString();
-            contextProperties.put(XA_CONNECTION_FACTORY_PREFIX + XA_CONNECTION_FACTORY, connectionString);
-            return this;
-        }
-
         public InitialContextBuilder withQueue(String queueName) {
             contextProperties.put("queue." + queueName, queueName);
-            return this;
-        }
-
-        public InitialContextBuilder withTopic(String topicName) {
-            contextProperties.put("topic." + topicName, topicName);
             return this;
         }
 
