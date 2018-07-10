@@ -45,7 +45,7 @@ public class Main {
         MessageProducer messageProducer = session.createProducer(queue);
 
         // Step 7. Sample queue message
-        TextMessage textMessage = session.createTextMessage("Hello this is from Madhawa Perera");
+        TextMessage textMessage = session.createTextMessage("Hello from WSO2");
 
         // Step 8. Publishing the message to the queue
         messageProducer.send(textMessage);
@@ -53,15 +53,15 @@ public class Main {
         // Step 9. Close JMS Message Producer
         messageProducer.close();
 
-        // Step 10. Close JMS resources
+        // Step 10. Close JMS Session
+        session.close();
+
+        // Step 11. Close JMS resources
         connection.close();
 
-        // Step 11. Also the initialContext
+        // Step 12. Also the initialContext
         initialContext.close();
 
         log.info("Message publisher closed");
-
-        Thread.sleep(1000);
-        System.exit(0);
     }
 }
