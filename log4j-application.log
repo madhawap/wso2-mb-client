@@ -1,0 +1,4 @@
+2018-07-09 14:23:31 INFO  DynamicSaslRegistrar:95 - Additional SASL providers successfully registered.
+2018-07-09 14:23:31 INFO  CallbackHandlerRegistry:128 - Callback handlers available for SASL mechanisms: CRAM-MD5 CRAM-MD5-HASHED AMQPLAIN PLAIN
+2018-07-09 14:23:31 WARN  QpidProperties:90 - Unable to find resource qpidversion.properties from classloader
+2018-07-09 14:23:31 INFO  Main:62 - Message publisher closed
