@@ -45,7 +45,7 @@ public class Main {
         MessageProducer messageProducer = session.createProducer(queue);
 
         // Step 7. Sample queue message
-        TextMessage textMessage = session.createTextMessage("Hello from WSO2");
+        TextMessage textMessage = session.createTextMessage("Hello from WSO2 Robin");
 
         // Step 8. Publishing the message to the queue
         messageProducer.send(textMessage);
